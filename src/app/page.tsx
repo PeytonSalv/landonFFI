@@ -353,7 +353,7 @@ export default function Home() {
                       Before making such a large purchase, you think about it—researching car brands, dealerships, styles, pricing, and comparing the different models available. Only after you&apos;ve chosen what is best for you, do you go make the purchase.
                     </p>
                     <p className="mt-4 font-semibold text-gray-800">
-                      The same logic applies to buying an ATM, and once you have decided an ATM will benefit your business, it's time to look at your options.
+                      The same logic applies to buying an ATM, and once you have decided an ATM will benefit your business, it&apos;s time to look at your options.
                     </p>
                   </div>
                 </div>
@@ -589,7 +589,7 @@ export default function Home() {
               Ready to Boost Your Business?
             </h2>
             <p className="text-xl text-gray-700 mb-8">
-              Join hundreds of satisfied business owners who've increased their revenue with our ATM solutions.
+              Join hundreds of satisfied business owners who&apos;ve increased their revenue with our ATM solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <div className="flex items-center space-x-2 text-gray-700">
