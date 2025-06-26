@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { Menu, X, Phone, Mail, MapPin } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -76,58 +77,58 @@ export default function MobileMenu() {
         </div>
 
         {/* Navigation */}
-        <nav className="p-6 bg-white">
-          <div className="space-y-2">
-            <a
-              href="/#services"
-              onClick={toggleMenu}
-              className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-100 transition-colors text-gray-700 hover:text-green-700"
-            >
-              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-              <span className="font-medium">Services</span>
-            </a>
-            <a
-              href="/partnership"
-              onClick={toggleMenu}
-              className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-100 transition-colors text-gray-700 hover:text-green-700"
-            >
-              <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-              <span className="font-medium">Partnership</span>
-            </a>
-            <a
-              href="/payment-processing"
-              onClick={toggleMenu}
-              className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-100 transition-colors text-gray-700 hover:text-green-700"
-            >
-              <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-              <span className="font-medium">Payment Processing</span>
-            </a>
-            <a
-              href="/service-areas"
-              onClick={toggleMenu}
-              className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-100 transition-colors text-gray-700 hover:text-green-700"
-            >
-              <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
-              <span className="font-medium">Service Areas</span>
-            </a>
-            <a
-              href="/locations"
-              onClick={toggleMenu}
-              className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-100 transition-colors text-gray-700 hover:text-green-700"
-            >
-              <div className="w-2 h-2 bg-lime-500 rounded-full"></div>
-              <span className="font-medium">Locations</span>
-            </a>
-            <a
-              href="/contact"
-              onClick={toggleMenu}
-              className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-100 transition-colors text-gray-700 hover:text-green-700"
-            >
-              <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
-              <span className="font-medium">Contact</span>
-            </a>
-          </div>
-        </nav>
+                    <nav className="p-6 bg-white">
+              <div className="space-y-2">
+                <Link
+                  href="/#services"
+                  onClick={toggleMenu}
+                  className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-100 transition-colors text-gray-700 hover:text-green-700"
+                >
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span className="font-medium">Services</span>
+                </Link>
+                <Link
+                  href="/partnership"
+                  onClick={toggleMenu}
+                  className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-100 transition-colors text-gray-700 hover:text-green-700"
+                >
+                  <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                  <span className="font-medium">Partnership</span>
+                </Link>
+                <Link
+                  href="/payment-processing"
+                  onClick={toggleMenu}
+                  className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-100 transition-colors text-gray-700 hover:text-green-700"
+                >
+                  <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                  <span className="font-medium">Payment Processing</span>
+                </Link>
+                <Link
+                  href="/service-areas"
+                  onClick={toggleMenu}
+                  className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-100 transition-colors text-gray-700 hover:text-green-700"
+                >
+                  <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                  <span className="font-medium">Service Areas</span>
+                </Link>
+                <Link
+                  href="/locations"
+                  onClick={toggleMenu}
+                  className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-100 transition-colors text-gray-700 hover:text-green-700"
+                >
+                  <div className="w-2 h-2 bg-lime-500 rounded-full"></div>
+                  <span className="font-medium">Locations</span>
+                </Link>
+                <Link
+                  href="/contact"
+                  onClick={toggleMenu}
+                  className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-100 transition-colors text-gray-700 hover:text-green-700"
+                >
+                  <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                  <span className="font-medium">Contact</span>
+                </Link>
+              </div>
+            </nav>
 
         {/* Contact Info */}
         <div className="p-6 border-t border-gray-200 bg-white">

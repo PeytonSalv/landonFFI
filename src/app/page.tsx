@@ -4,10 +4,13 @@ import { motion } from 'framer-motion';
 import { CreditCard, MapPin, Clock, Shield, Zap, Phone, Mail, Star, TrendingUp, DollarSign, Users, Car, Handshake, Settings, CheckCircle } from 'lucide-react';
 import Header from '@/components/Header';
 import ContactForm from '@/components/ContactForm';
+import AlabamaATMSchema from '@/components/AlabamaATMSchema';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-lime-50 to-yellow-50">
+    <>
+      <AlabamaATMSchema />
+      <div className="min-h-screen bg-gradient-to-br from-green-50 via-lime-50 to-yellow-50">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-4 -left-4 w-72 h-72 bg-green-200 rounded-full mix-blend-normal filter blur-3xl opacity-30 animate-pulse"></div>
@@ -122,7 +125,7 @@ export default function Home() {
 
             <div className="text-center">
               <p className="text-lg text-gray-700 mb-8">
-                Not sure if an ATM is right for your business? Have questions about how they work or what options are available? Or maybe you're ready to get started? Fill out the form below to find out if a FREE ATM placement is the right fit for you!
+                Not sure if an ATM is right for your business? Have questions about how they work or what options are available? Or maybe you&apos;re ready to get started? Fill out the form below to find out if a FREE ATM placement is the right fit for you!
               </p>
             </div>
           </div>
@@ -237,7 +240,7 @@ export default function Home() {
 
             <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
               <p>
-                Many people believe that big banks own all the ATMs in the world, taking our hard-earned money and lining their pockets with it. They think banks are charging us fees for taking our money out of "our bank." While they're not entirely wrong, they're not entirely right either.
+                Many people believe that big banks own all the ATMs in the world, taking our hard-earned money and lining their pockets with it. They think banks are charging us fees for taking our money out of &quot;our bank.&quot; While they&apos;re not entirely wrong, they&apos;re not entirely right either.
               </p>
 
               <div className="bg-gradient-to-br from-green-50 to-lime-50 rounded-2xl p-8 my-8 border border-green-100">
@@ -248,7 +251,7 @@ export default function Home() {
                   Many companies, like Ford Frontier Investments, buy ATMs and act as a sort of middleman, connecting banks, credit card companies, businesses, and customers with the cash held on their plastic cards.
                 </p>
                 <p className="mt-4">
-                  <strong>But here's the key:</strong> This money doesn't belong to the banks—it belongs to the owner of the ATM. In certain cases that's the banks, but not always.
+                  <strong>But here&apos;s the key:</strong> This money doesn&apos;t belong to the banks—it belongs to the owner of the ATM. In certain cases that&apos;s the banks, but not always.
                 </p>
               </div>
 
@@ -257,7 +260,7 @@ export default function Home() {
               </h3>
               
               <p>
-                That's where the fee comes into play. The "Surcharge" collected goes to the owner of the ATM, allowing them to pay for the machine while also gaining profit from the cash.
+                That&apos;s where the fee comes into play. The &quot;Surcharge&quot; collected goes to the owner of the ATM, allowing them to pay for the machine while also gaining profit from the cash.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-8">
@@ -619,5 +622,6 @@ export default function Home() {
         </div>
       </footer>
     </div>
+    </>
   );
 }

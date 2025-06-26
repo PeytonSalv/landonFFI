@@ -59,7 +59,7 @@ This inquiry was submitted through the Ford Frontier Investments website contact
           Get Your FREE ATM Quote
         </h3>
         <p className="text-gray-700">
-          Fill out the form below and we'll contact you within 24 hours
+          Fill out the form below and we&apos;ll contact you within 24 hours
         </p>
       </div>
 

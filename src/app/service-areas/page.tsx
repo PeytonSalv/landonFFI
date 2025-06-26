@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { MapPin, Star, CheckCircle, Phone, Mail, Clock, Users, TrendingUp, DollarSign, Sun, Landmark, Music } from 'lucide-react';
+import { MapPin, Star, CheckCircle, Phone, Mail, Clock, Users, TrendingUp, Sun, Landmark, Music } from 'lucide-react';
 import Header from '@/components/Header';
 
 export default function ServiceAreasPage() {
@@ -229,7 +229,7 @@ export default function ServiceAreasPage() {
             <div className="bg-gradient-to-br from-green-700 to-green-800 rounded-3xl p-8 md:p-12 text-white">
               <h2 className="text-3xl font-bold mb-6">Ready to Get Started in Your Area?</h2>
               <p className="text-xl text-green-100 mb-8 max-w-2xl mx-auto">
-                Whether you're in Alabama, Florida, Mississippi, or Tennessee, we're here to provide exceptional ATM services for your business.
+                Whether you&apos;re in Alabama, Florida, Mississippi, or Tennessee, we&apos;re here to provide exceptional ATM services for your business.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                 <motion.a
