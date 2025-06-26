@@ -5,6 +5,7 @@ import { CreditCard, MapPin, Clock, Shield, Zap, Phone, Mail, Star, TrendingUp, 
 import Header from '@/components/Header';
 import ContactForm from '@/components/ContactForm';
 import AlabamaATMSchema from '@/components/AlabamaATMSchema';
+import AnimatedCounter from '@/components/AnimatedCounter';
 
 export default function Home() {
   return (
@@ -74,7 +75,7 @@ export default function Home() {
                 Get A <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-lime-600">FREE ATM</span> For Your Business!
               </h2>
               <p className="text-xl text-gray-700 max-w-4xl mx-auto mb-8">
-                An ATM is the easiest and quickest way to boost your business and improve your cash sales. Studies show that by giving your customers access to cash, you increase customer flow by <strong>5%</strong> while also allowing an increase in cash sales by <strong>20%</strong>.
+                An ATM is the easiest and quickest way to boost your business and improve your cash sales. Studies show that by giving your customers access to cash, you increase customer flow by <strong><AnimatedCounter target={5} suffix="%" /></strong> while also allowing an increase in cash sales by <strong><AnimatedCounter target={20} suffix="%" /></strong>.
               </p>
               <p className="text-lg text-gray-700 max-w-3xl mx-auto">
                 Allow us to help improve your business by allowing customers access to cash when they need it.
@@ -92,7 +93,7 @@ export default function Home() {
                 <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <Users className="w-8 h-8 text-green-700" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">5% More</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2"><AnimatedCounter target={5} suffix="%" /> More</h3>
                 <p className="text-gray-700">Customer Flow</p>
               </motion.div>
 
@@ -105,7 +106,7 @@ export default function Home() {
                 <div className="w-16 h-16 bg-lime-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <TrendingUp className="w-8 h-8 text-lime-700" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">20% More</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2"><AnimatedCounter target={20} suffix="%" /> More</h3>
                 <p className="text-gray-700">Cash Sales</p>
               </motion.div>
 
@@ -118,7 +119,7 @@ export default function Home() {
                 <div className="w-16 h-16 bg-yellow-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <DollarSign className="w-8 h-8 text-yellow-700" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">$0 Cost</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2"><AnimatedCounter target={0} startFrom={3000} prefix="$" /> Cost</h3>
                 <p className="text-gray-700">FREE Placement</p>
               </motion.div>
             </div>
