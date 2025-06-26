@@ -69,7 +69,7 @@ This message was submitted through the Ford Frontier Investments contact page.
           >
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Contact Us</h1>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-              We'd love to hear from you! Whether you have questions about our ATM placement services, payment processing solutions, or partnership opportunities, feel free to reach out.
+              We&apos;d love to hear from you! Whether you have questions about our ATM placement services, payment processing solutions, or partnership opportunities, feel free to reach out.
             </p>
           </motion.div>
 
@@ -138,7 +138,7 @@ This message was submitted through the Ford Frontier Investments contact page.
               <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-green-100 shadow-sm">
                 <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">Send Us a Message</h2>
                 <p className="text-gray-700 text-center mb-8">
-                  Fill out the form below, and we'll get back to you as soon as possible.
+                  Fill out the form below, and we&apos;ll get back to you as soon as possible.
                 </p>
 
                 <form onSubmit={handleSubmit} className="space-y-6">

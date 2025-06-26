@@ -292,7 +292,7 @@ export default function Home() {
                     With the right training, this can be done by anyone. And with the right experience, it can be done quite well.
                   </p>
                   <p className="text-green-100">
-                    That's where we come in—to help you succeed in the ATM business.
+                    That&apos;s where we come in—to help you succeed in the ATM business.
                   </p>
                 </div>
               </div>
@@ -328,7 +328,7 @@ export default function Home() {
                 Should I Buy An ATM?
               </h2>
               <p className="text-xl text-gray-700 max-w-4xl mx-auto">
-                Before answering this question, you must ask yourself if either you or your customers will benefit from ATM installation. If the answer is no, you probably don't need one.
+                Before answering this question, you must ask yourself if either you or your customers will benefit from ATM installation. If the answer is no, you probably don&apos;t need one.
               </p>
             </div>
 
@@ -347,10 +347,10 @@ export default function Home() {
                       Think of it like buying a car
                     </h3>
                     <p>
-                      You don't just wake up one day, flip a coin, and write a check without knowing who you're buying from, what you're getting, or how much it costs.
+                      You don&apos;t just wake up one day, flip a coin, and write a check without knowing who you&apos;re buying from, what you&apos;re getting, or how much it costs.
                     </p>
                     <p className="mt-4">
-                      Before making such a large purchase, you think about it—researching car brands, dealerships, styles, pricing, and comparing the different models available. Only after you've chosen what is best for you, do you go make the purchase.
+                      Before making such a large purchase, you think about it—researching car brands, dealerships, styles, pricing, and comparing the different models available. Only after you&apos;ve chosen what is best for you, do you go make the purchase.
                     </p>
                     <p className="mt-4 font-semibold text-gray-800">
                       The same logic applies to buying an ATM, and once you have decided an ATM will benefit your business, it's time to look at your options.
@@ -374,7 +374,7 @@ export default function Home() {
                   </div>
                   <div className="bg-gradient-to-br from-lime-50 to-yellow-50 rounded-xl p-6 border border-lime-100">
                     <h5 className="text-lg font-semibold text-gray-900 mb-2">Financing</h5>
-                    <p className="text-sm text-gray-700">Use someone else's money to purchase, paying back over time with interest.</p>
+                    <p className="text-sm text-gray-700">Use someone else&apos;s money to purchase, paying back over time with interest.</p>
                   </div>
                   <div className="bg-gradient-to-br from-yellow-50 to-green-50 rounded-xl p-6 border border-yellow-100">
                     <h5 className="text-lg font-semibold text-gray-900 mb-2">Leasing</h5>
@@ -399,7 +399,7 @@ export default function Home() {
                   </div>
                   <h5 className="text-xl font-bold text-gray-900 mb-4 text-center">Own the ATM</h5>
                   <p className="text-gray-700 text-center">
-                    Buy the ATM yourself. You'll have full ownership but also responsibility for maintenance, restocking, compliance, and liabilities.
+                    Buy the ATM yourself. You&apos;ll have full ownership but also responsibility for maintenance, restocking, compliance, and liabilities.
                   </p>
                 </motion.div>
 
@@ -520,7 +520,7 @@ export default function Home() {
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">ATM Partnership</h3>
               </div>
               <p className="text-gray-700 mb-6">
-                Want an ATM without the upfront cost but don't mind handling the cash? Partner with us—we'll purchase the machine, handle the setup, and deliver it to your door. All you need to do is fill it.
+                Want an ATM without the upfront cost but don&apos;t mind handling the cash? Partner with us—we&apos;ll purchase the machine, handle the setup, and deliver it to your door. All you need to do is fill it.
               </p>
               <motion.a
                 href="/partnership"
@@ -558,7 +558,7 @@ export default function Home() {
                 Our tailored solutions are designed to reduce unnecessary expenses and streamline your operations, giving you the freedom to focus on what truly matters—growing your business.
               </p>
               <p className="text-lg leading-relaxed">
-                With a commitment to exceptional service and customer satisfaction, we don't just provide solutions; we build lasting partnerships. Choose Ford Frontier Investments and experience the difference of having a team that genuinely cares about your success.
+                With a commitment to exceptional service and customer satisfaction, we don&apos;t just provide solutions; we build lasting partnerships. Choose Ford Frontier Investments and experience the difference of having a team that genuinely cares about your success.
               </p>
             </div>
             <div className="text-center mt-12">

@@ -137,7 +137,7 @@ export default function PartnershipPage() {
                 Our ATM Partnership Program is designed for businesses that want complete operational control without the complexities of ownership. We handle installation, maintenance, and compliance while you maintain full control and generate additional revenue.
               </p>
               <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-                Experience all the benefits of ATM ownership with none of the operational headaches. Simply load the machine with your existing cash flow, and we'll handle the rest while you focus on growing your business.
+                Experience all the benefits of ATM ownership with none of the operational headaches. Simply load the machine with your existing cash flow, and we&apos;ll handle the rest while you focus on growing your business.
               </p>
             </div>
           </motion.div>

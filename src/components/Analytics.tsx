@@ -87,9 +87,9 @@ export default function Analytics({ gtmId, gaId }: AnalyticsProps) {
 }
 
 // Track custom events
-export function trackEvent(eventName: string, parameters?: Record<string, any>) {
-  if (typeof window !== 'undefined' && (window as any).gtag) {
-    (window as any).gtag('event', eventName, parameters);
+export function trackEvent(eventName: string, parameters?: Record<string, string | number>) {
+  if (typeof window !== 'undefined' && (window as unknown as { gtag?: Function }).gtag) {
+    (window as unknown as { gtag: Function }).gtag('event', eventName, parameters);
   }
 }
 

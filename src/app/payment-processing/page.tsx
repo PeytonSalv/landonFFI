@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { CheckCircle, Clock, Settings, DollarSign, Zap, Lock, Eye, Headphones, Star } from 'lucide-react';
+import { CheckCircle, Settings, Zap, Lock, Eye, Headphones, Star } from 'lucide-react';
 import Header from '@/components/Header';
 
 export default function PaymentProcessingPage() {
@@ -14,7 +14,7 @@ export default function PaymentProcessingPage() {
     {
       icon: Eye,
       title: "Transparent Pricing",
-      description: "No hidden fees or surprises. You'll always know exactly what you're paying each month with our clear pricing structure."
+      description: "No hidden fees or surprises. You&apos;ll always know exactly what you&apos;re paying each month with our clear pricing structure."
     },
     {
       icon: Settings,
@@ -64,7 +64,7 @@ export default function PaymentProcessingPage() {
     },
     {
       title: "Normal Surcharging",
-      description: "Add a small fee to credit card transactions to offset processing costs. A straightforward approach that doesn't affect your overall pricing structure.",
+      description: "Add a small fee to credit card transactions to offset processing costs. A straightforward approach that doesn&apos;t affect your overall pricing structure.",
       benefits: ["Cover processing fees", "Maintain pricing structure", "Apply to all card payments", "Simple fee management"],
       gradient: "from-yellow-500 to-lime-600"
     }
@@ -105,7 +105,7 @@ export default function PaymentProcessingPage() {
                 Seamless Payment Processing <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-lime-600">Tailored for Your Business</span>
               </h2>
               <p className="text-xl text-gray-700 max-w-4xl mx-auto mb-8">
-                At Ford Frontier Investments, we understand that accepting payments seamlessly is crucial to your business's success. We provide secure, reliable payment processing services tailored to meet the unique needs of your business, whatever its size or industry.
+                At Ford Frontier Investments, we understand that accepting payments seamlessly is crucial to your business&apos;s success. We provide secure, reliable payment processing services tailored to meet the unique needs of your business, whatever its size or industry.
               </p>
               <div className="bg-gradient-to-r from-blue-50 to-green-50 rounded-2xl p-6 border border-blue-100">
                 <p className="text-lg text-gray-700 font-medium">
@@ -152,7 +152,7 @@ export default function PaymentProcessingPage() {
             <div className="bg-gradient-to-br from-green-700 to-green-800 rounded-3xl p-8 md:p-12 text-white">
               <h2 className="text-3xl font-bold text-center mb-8">We Serve All Types of Businesses</h2>
               <p className="text-xl text-green-100 text-center mb-8 max-w-3xl mx-auto">
-                Whether you're a small local shop or a large enterprise, we'll ensure you have the tools needed to accept payments securely and efficiently.
+                Whether you&apos;re a small local shop or a large enterprise, we&apos;ll ensure you have the tools needed to accept payments securely and efficiently.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {businessTypes.map((business, index) => (
@@ -243,7 +243,7 @@ export default function PaymentProcessingPage() {
             <div className="bg-gradient-to-br from-green-700 to-green-800 rounded-3xl p-8 md:p-12 text-white">
               <h2 className="text-3xl font-bold mb-6">Ready to Transform Your Payment Processing?</h2>
               <p className="text-xl text-green-100 mb-8 max-w-2xl mx-auto">
-                Choose the right payment processing solution that can make a world of difference for your business. With our transparent pricing and customer-first approach, there's no reason not to choose us.
+                Choose the right payment processing solution that can make a world of difference for your business. With our transparent pricing and customer-first approach, there&apos;s no reason not to choose us.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <motion.a
