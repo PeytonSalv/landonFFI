@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { CreditCard, MapPin, Clock, Shield, Zap, Phone, Mail, Star, TrendingUp, DollarSign, Users, Car, Handshake, Settings, CheckCircle } from 'lucide-react';
+import { CreditCard, MapPin, Clock, Shield, Zap, Star, TrendingUp, DollarSign, Users, Car, Handshake, Settings, CheckCircle } from 'lucide-react';
 import Header from '@/components/Header';
 import ContactForm from '@/components/ContactForm';
 import AlabamaATMSchema from '@/components/AlabamaATMSchema';
@@ -572,11 +572,11 @@ export default function Home() {
                    </div>
                  </div>
                 <p className="text-gray-700 text-lg leading-relaxed">
-                  Many people believe that big banks own all the ATMs in the world, taking our hard-earned money and lining their pockets with it. They think banks are charging us fees for taking our money out of "our bank."
+                  Many people believe that big banks own all the ATMs in the world, taking our hard-earned money and lining their pockets with it. They think banks are charging us fees for taking our money out of &quot;our bank.&quot;
                 </p>
                 <div className="mt-6 p-4 bg-gradient-to-r from-red-50 to-orange-50 rounded-xl border border-red-100">
                   <p className="text-red-800 font-medium">
-                    While they're not entirely wrong, they're not entirely right either.
+                    While they&apos;re not entirely wrong, they&apos;re not entirely right either.
                   </p>
                 </div>
               </div>
@@ -604,7 +604,7 @@ export default function Home() {
                  </p>
                  <div className="p-4 bg-green-600/30 rounded-xl border border-green-500/20">
                    <p className="text-green-100 font-semibold">
-                     <strong>Key Insight:</strong> This money doesn't belong to the banks—it belongs to the owner of the ATM.
+                     <strong>Key Insight:</strong> This money doesn&apos;t belong to the banks—it belongs to the owner of the ATM.
                    </p>
                  </div>
               </div>
@@ -627,7 +627,7 @@ export default function Home() {
                   Understanding ATM Surcharges
                 </h3>
                 <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-                  The "Surcharge" collected goes to the owner of the ATM, allowing them to pay for the machine while also gaining profit from the cash.
+                  The &quot;Surcharge&quot; collected goes to the owner of the ATM, allowing them to pay for the machine while also gaining profit from the cash.
                 </p>
               </div>
 
@@ -722,7 +722,7 @@ export default function Home() {
                   With the right training, this can be done by anyone. And with the right experience, it can be done quite well.
                 </p>
                 <p className="text-lg text-green-200 mb-8 max-w-2xl mx-auto">
-                  That's where we come in—to help you succeed in the ATM business.
+                  That&apos;s where we come in—to help you succeed in the ATM business.
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -833,7 +833,7 @@ export default function Home() {
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">If the answer is NO</h3>
                   <p className="text-gray-700 text-lg">
-                    You probably don't need an ATM. Focus on other business improvements that will directly benefit your customers.
+                    You probably don&apos;t need an ATM. Focus on other business improvements that will directly benefit your customers.
                   </p>
                 </motion.div>
 
@@ -846,7 +846,7 @@ export default function Home() {
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">If the answer is YES</h3>
                   <p className="text-gray-700 text-lg">
-                    Great! Now it's time to explore your options and make an informed decision about the best approach for your business.
+                    Great! Now it&apos;s time to explore your options and make an informed decision about the best approach for your business.
                   </p>
                 </motion.div>
               </div>
@@ -873,7 +873,7 @@ export default function Home() {
                       Think of it like buying a car
                     </h3>
                     <p className="text-xl text-gray-700 leading-relaxed">
-                      You don't just wake up one day, flip a coin, and write a check without knowing who you're buying from, what you're getting, or how much it costs.
+                      You don&apos;t just wake up one day, flip a coin, and write a check without knowing who you&apos;re buying from, what you&apos;re getting, or how much it costs.
                     </p>
                   </div>
                 </div>
@@ -908,7 +908,7 @@ export default function Home() {
                   <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-white/40">
                     <h4 className="text-xl font-semibold text-gray-900 mb-4">The Same Logic Applies to ATMs</h4>
                     <p className="text-gray-700 mb-4">
-                      Once you've decided an ATM will benefit your business, it's time to look at your options and make an informed choice.
+                      Once you&apos;ve decided an ATM will benefit your business, it&apos;s time to look at your options and make an informed choice.
                     </p>
                     <div className="flex items-center space-x-2 text-green-700">
                       <CheckCircle className="w-5 h-5" />
@@ -1091,7 +1091,7 @@ export default function Home() {
                          <div className="bg-gradient-to-r from-green-600 to-lime-600 rounded-3xl p-8 md:p-12 text-white">
               <h3 className="text-3xl font-bold mb-4">Ready to Make Your Decision?</h3>
               <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-                Let's discuss which option is best for your specific business needs and location.
+                Let&apos;s discuss which option is best for your specific business needs and location.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <motion.button

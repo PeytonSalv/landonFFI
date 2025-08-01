@@ -20,7 +20,6 @@ export default function AnimatedCounter({
   startFrom = 0
 }: AnimatedCounterProps) {
   const [count, setCount] = useState(startFrom);
-  const [isInView, setIsInView] = useState(false);
   const elementRef = useRef<HTMLSpanElement>(null);
   const animationRef = useRef<number | undefined>(undefined);
   const observerRef = useRef<IntersectionObserver | undefined>(undefined);
@@ -66,7 +65,6 @@ export default function AnimatedCounter({
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting && !hasAnimatedRef.current) {
-            setIsInView(true);
             startAnimation();
           }
         });
