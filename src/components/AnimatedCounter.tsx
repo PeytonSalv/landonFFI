@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 
 interface AnimatedCounterProps {
   target: number;
@@ -8,7 +8,6 @@ interface AnimatedCounterProps {
   suffix?: string;
   prefix?: string;
   className?: string;
-  startAnimation?: boolean;
   startFrom?: number;
 }
 
@@ -18,15 +17,19 @@ export default function AnimatedCounter({
   suffix = '', 
   prefix = '',
   className = '',
-  startAnimation = true,
   startFrom = 0
 }: AnimatedCounterProps) {
   const [count, setCount] = useState(startFrom);
+  const [isInView, setIsInView] = useState(false);
+  const elementRef = useRef<HTMLSpanElement>(null);
   const animationRef = useRef<number | undefined>(undefined);
+  const observerRef = useRef<IntersectionObserver | undefined>(undefined);
+  const hasAnimatedRef = useRef(false);
 
-  useEffect(() => {
-    if (!startAnimation) return;
-
+  const startAnimation = useCallback(() => {
+    if (hasAnimatedRef.current) return;
+    
+    hasAnimatedRef.current = true;
     const startTime = Date.now();
     const startValue = startFrom;
 
@@ -48,16 +51,46 @@ export default function AnimatedCounter({
     };
 
     animationRef.current = requestAnimationFrame(animate);
+  }, [target, duration, startFrom]);
+
+  useEffect(() => {
+    const element = elementRef.current;
+    if (!element) return;
+
+    // Reset animation state
+    hasAnimatedRef.current = false;
+    setCount(startFrom);
+
+    // Create intersection observer
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasAnimatedRef.current) {
+            setIsInView(true);
+            startAnimation();
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '50px'
+      }
+    );
+
+    observerRef.current.observe(element);
 
     return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [target, duration, startAnimation, startFrom]);
+  }, [startAnimation, startFrom]);
 
   return (
-    <span className={className}>
+    <span ref={elementRef} className={className}>
       {prefix}{count.toLocaleString()}{suffix}
     </span>
   );

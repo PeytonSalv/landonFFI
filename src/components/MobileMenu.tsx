@@ -37,7 +37,8 @@ export default function MobileMenu() {
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundColor: 'rgba(0, 0, 0, 0.8)',
+          backgroundColor: 'rgba(0, 0, 0, 0.5)',
+          backdropFilter: 'blur(4px)',
         }}
       />
 
@@ -48,126 +49,113 @@ export default function MobileMenu() {
           top: 0,
           right: 0,
           bottom: 0,
-          width: '320px',
+          width: '300px',
           maxWidth: '85vw',
           backgroundColor: 'white',
           borderLeft: '1px solid #e5e7eb',
-          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+          boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1)',
           overflowY: 'auto',
         }}
       >
         {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b border-gray-200 bg-white">
+        <div className="flex items-center justify-between p-4 border-b border-gray-100">
           <div className="flex items-center space-x-2">
             <Image 
               src="/logo.png" 
-              alt="Ford Frontier Investments Logo" 
-              width={32} 
-              height={32} 
-              className="w-8 h-8 object-contain"
+              alt="Ford Frontier Investments" 
+              width={24} 
+              height={24} 
+              className="w-6 h-6"
             />
-            <span className="text-lg font-bold text-gray-900">Ford Frontier Investments</span>
+            <span className="font-semibold text-gray-900">Ford Frontier Investments</span>
           </div>
           <button
             onClick={toggleMenu}
-            className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors"
+            className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
           >
-            <X className="w-6 h-6 text-gray-700" />
+            <X className="w-5 h-5 text-gray-600" />
           </button>
         </div>
 
         {/* Navigation */}
-                    <nav className="p-6 bg-white">
-              <div className="space-y-2">
-                <Link
-                  href="/#services"
-                  onClick={toggleMenu}
-                  className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-100 transition-colors text-gray-700 hover:text-green-700"
-                >
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="font-medium">Services</span>
-                </Link>
-                <Link
-                  href="/partnership"
-                  onClick={toggleMenu}
-                  className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-100 transition-colors text-gray-700 hover:text-green-700"
-                >
-                  <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                  <span className="font-medium">Partnership</span>
-                </Link>
-                <Link
-                  href="/payment-processing"
-                  onClick={toggleMenu}
-                  className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-100 transition-colors text-gray-700 hover:text-green-700"
-                >
-                  <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                  <span className="font-medium">Payment Processing</span>
-                </Link>
-                <Link
-                  href="/service-areas"
-                  onClick={toggleMenu}
-                  className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-100 transition-colors text-gray-700 hover:text-green-700"
-                >
-                  <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
-                  <span className="font-medium">Service Areas</span>
-                </Link>
-                <Link
-                  href="/locations"
-                  onClick={toggleMenu}
-                  className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-100 transition-colors text-gray-700 hover:text-green-700"
-                >
-                  <div className="w-2 h-2 bg-lime-500 rounded-full"></div>
-                  <span className="font-medium">Locations</span>
-                </Link>
-                <Link
-                  href="/contact"
-                  onClick={toggleMenu}
-                  className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-100 transition-colors text-gray-700 hover:text-green-700"
-                >
-                  <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
-                  <span className="font-medium">Contact</span>
-                </Link>
-              </div>
-            </nav>
+        <nav className="p-4">
+          <div className="space-y-1">
+            <Link
+              href="/#services"
+              onClick={toggleMenu}
+              className="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
+            >
+              Services
+            </Link>
+            <Link
+              href="/payment-processing"
+              onClick={toggleMenu}
+              className="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
+            >
+              Payment Processing
+            </Link>
+            <Link
+              href="/partnership"
+              onClick={toggleMenu}
+              className="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
+            >
+              Partnership
+            </Link>
+            <Link
+              href="/service-areas"
+              onClick={toggleMenu}
+              className="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
+            >
+              Service Areas
+            </Link>
+            <Link
+              href="/locations"
+              onClick={toggleMenu}
+              className="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
+            >
+              Locations
+            </Link>
+            <Link
+              href="/contact"
+              onClick={toggleMenu}
+              className="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
+            >
+              Contact
+            </Link>
+          </div>
+        </nav>
 
         {/* Contact Info */}
-        <div className="p-6 border-t border-gray-200 bg-white">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">Get In Touch</h3>
+        <div className="p-4 border-t border-gray-100">
           <div className="space-y-3">
-            <div className="flex items-center space-x-3 text-gray-700">
-              <div className="w-8 h-8 bg-gradient-to-r from-green-600 to-green-700 rounded-lg flex items-center justify-center">
-                <Phone className="w-4 h-4 text-white" />
-              </div>
-              <a href="tel:+14047473899" className="text-sm hover:text-green-700 transition-colors">
+            <div className="flex items-center space-x-3">
+              <Phone className="w-4 h-4 text-gray-500" />
+              <a href="tel:+14047473899" className="text-gray-700 hover:text-gray-900 transition-colors">
                 (404) 747-3899
               </a>
             </div>
-            <div className="flex items-center space-x-3 text-gray-700">
-              <div className="w-8 h-8 bg-gradient-to-r from-lime-600 to-green-600 rounded-lg flex items-center justify-center">
-                <Mail className="w-4 h-4 text-white" />
-              </div>
-              <a href="mailto:Landon@fordfrontierinvestments.com" className="text-sm hover:text-green-700 transition-colors break-all">
+            <div className="flex items-center space-x-3">
+              <Mail className="w-4 h-4 text-gray-500" />
+              <a href="mailto:Landon@fordfrontierinvestments.com" className="text-gray-700 hover:text-gray-900 transition-colors text-sm">
                 Landon@fordfrontierinvestments.com
               </a>
             </div>
-            <div className="flex items-center space-x-3 text-gray-700">
-              <div className="w-8 h-8 bg-gradient-to-r from-yellow-500 to-lime-600 rounded-lg flex items-center justify-center">
-                <MapPin className="w-4 h-4 text-white" />
-              </div>
-              <span className="text-sm">AL, FL, MS, TN</span>
+            <div className="flex items-center space-x-3">
+              <MapPin className="w-4 h-4 text-gray-500" />
+              <span className="text-gray-700 text-sm">AL, FL, MS, TN</span>
             </div>
           </div>
         </div>
 
         {/* CTA Button */}
-        <div className="p-6 bg-white">
-          <a
-            href="/contact"
+        <div className="p-4 border-t border-gray-100">
+          <Link
+            href="#contact-form"
             onClick={toggleMenu}
-            className="w-full px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 text-center inline-block hover:scale-[1.02] active:scale-[0.98]"
+            className="w-full flex items-center justify-center px-4 py-2 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition-colors"
           >
             Get Free Quote
-          </a>
+          </Link>
         </div>
       </div>
     </div>
@@ -178,9 +166,9 @@ export default function MobileMenu() {
       {/* Mobile menu button */}
       <button
         onClick={toggleMenu}
-        className="md:hidden w-10 h-10 flex items-center justify-center rounded-lg bg-white/80 backdrop-blur-sm border border-green-200 shadow-sm"
+        className="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
       >
-        <Menu className="w-6 h-6 text-gray-700" />
+        <Menu className="w-5 h-5 text-gray-600" />
       </button>
 
       {/* Portal the mobile menu to document.body */}

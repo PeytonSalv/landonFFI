@@ -24,40 +24,170 @@ export default function Home() {
 
       {/* Hero Section */}
       <motion.section 
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1, delay: 0.2 }}
-        className="relative z-10 px-4 py-20 text-center"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.2 }}
+        className="relative z-10 px-4 py-32 text-center min-h-screen flex items-center overflow-hidden"
+        style={{
+          backgroundImage: `url('/Hero.jpeg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
       >
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-            Premium ATM
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-lime-600">
+        {/* Animated Background Overlay */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5, delay: 0.3 }}
+          className="absolute inset-0 bg-gradient-to-br from-black/50 via-black/40 to-black/30"
+        ></motion.div>
+        
+        {/* Floating Elements */}
+        <motion.div
+          animate={{ 
+            y: [0, -20, 0],
+            rotate: [0, 2, 0]
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute top-20 left-10 w-2 h-2 bg-green-400 rounded-full opacity-60"
+        />
+        <motion.div
+          animate={{ 
+            y: [0, 30, 0],
+            rotate: [0, -3, 0]
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1
+          }}
+          className="absolute top-40 right-20 w-3 h-3 bg-lime-400 rounded-full opacity-40"
+        />
+        <motion.div
+          animate={{ 
+            y: [0, -25, 0],
+            rotate: [0, 1, 0]
+          }}
+          transition={{
+            duration: 7,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2
+          }}
+          className="absolute bottom-40 left-20 w-1 h-1 bg-green-300 rounded-full opacity-70"
+        />
+        
+        <div className="max-w-4xl mx-auto relative z-10">
+          <motion.h1 
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-lg"
+          >
+            <motion.span
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+              className="block"
+            >
+              Premium ATM
+            </motion.span>
+            <motion.span 
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.9 }}
+              className="block text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-lime-400"
+            >
               Solutions
-            </span>
-          </h1>
-          <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
+            </motion.span>
+          </motion.h1>
+          
+          <motion.p 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.1 }}
+            className="text-xl text-white mb-8 max-w-2xl mx-auto drop-shadow-md"
+          >
             Reliable, secure, and profitable ATM services for businesses of all sizes. 
             Increase foot traffic and generate passive income with our premium ATM solutions.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          </motion.p>
+          
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.3 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+          >
             <motion.a
-              href="/contact"
-              whileHover={{ scale: 1.05 }}
+              href="#contact-form"
+              whileHover={{ 
+                scale: 1.05,
+                boxShadow: "0 20px 40px rgba(0,0,0,0.3)"
+              }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 bg-gradient-to-r from-green-600 to-green-700 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-center"
             >
               Get Started Today
             </motion.a>
             <motion.a
-              href="/contact"
-              whileHover={{ scale: 1.05 }}
+              href="#contact-form"
+              whileHover={{ 
+                scale: 1.05,
+                backgroundColor: "rgba(255,255,255,0.1)"
+              }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 border-2 border-green-300 text-green-700 font-semibold rounded-full hover:bg-green-50 hover:border-green-400 transition-all duration-300 text-center"
+              className="px-8 py-4 border-2 border-white text-white font-semibold rounded-full hover:bg-white/10 hover:border-white/80 transition-all duration-300 text-center backdrop-blur-sm"
             >
               Learn More
             </motion.a>
-          </div>
+          </motion.div>
+        </div>
+        
+        {/* Scroll Indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 2 }}
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        >
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+            className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center"
+          >
+            <motion.div
+              animate={{ y: [0, 12, 0] }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              className="w-1 h-3 bg-white/70 rounded-full mt-2"
+            />
+          </motion.div>
+        </motion.div>
+      </motion.section>
+
+      {/* Contact Form Section */}
+      <motion.section 
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+        className="relative z-10 px-4 py-24"
+        id="contact-form"
+      >
+        <div className="max-w-7xl mx-auto">
+          <ContactForm />
         </div>
       </motion.section>
 
@@ -66,83 +196,222 @@ export default function Home() {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.3 }}
-        className="relative z-10 px-4 py-20"
+        className="relative z-10 px-4 py-20 overflow-hidden"
       >
+        {/* Floating background elements */}
+        <motion.div
+          className="absolute top-20 left-10 w-20 h-20 bg-green-200 rounded-full opacity-10"
+          animate={{
+            y: [0, -30, 0],
+            x: [0, 20, 0],
+            rotate: [0, 180, 360]
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        <motion.div
+          className="absolute bottom-10 right-20 w-16 h-16 bg-lime-300 rounded-full opacity-15"
+          animate={{
+            y: [0, 25, 0],
+            x: [0, -15, 0],
+            rotate: [0, -180, -360]
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 3
+          }}
+        />
+        
         <div className="max-w-7xl mx-auto">
-          <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-green-100 shadow-sm">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Get A <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-lime-600">FREE ATM</span> For Your Business!
-              </h2>
-              <p className="text-xl text-gray-700 max-w-4xl mx-auto mb-8">
-                An ATM is the easiest and quickest way to boost your business and improve your cash sales. Studies show that by giving your customers access to cash, you increase customer flow by <strong><AnimatedCounter target={5} suffix="%" /></strong> while also allowing an increase in cash sales by <strong><AnimatedCounter target={20} suffix="%" /></strong>.
-              </p>
-              <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-                Allow us to help improve your business by allowing customers access to cash when they need it.
-              </p>
-            </div>
-
-            {/* Benefits Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-center p-6 bg-gradient-to-br from-green-50 to-lime-50 rounded-2xl border border-green-100"
-              >
-                <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Users className="w-8 h-8 text-green-700" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2"><AnimatedCounter target={5} suffix="%" /> More</h3>
-                <p className="text-gray-700">Customer Flow</p>
-              </motion.div>
-
-              <motion.div
+          <motion.div 
+            className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-green-100 shadow-lg relative overflow-hidden"
+            whileHover={{
+              y: -5,
+              boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.15)"
+            }}
+            transition={{ duration: 0.3 }}
+          >
+            {/* Background gradient animation */}
+            <motion.div
+              className="absolute inset-0 opacity-5"
+              animate={{
+                background: [
+                  "linear-gradient(45deg, #10b981, #84cc16)",
+                  "linear-gradient(45deg, #84cc16, #eab308)",
+                  "linear-gradient(45deg, #eab308, #10b981)"
+                ]
+              }}
+              transition={{
+                duration: 8,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+            
+            <div className="relative z-10">
+              <motion.div 
+                className="text-center mb-12"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-center p-6 bg-gradient-to-br from-lime-50 to-yellow-50 rounded-2xl border border-lime-100"
               >
-                <div className="w-16 h-16 bg-lime-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <TrendingUp className="w-8 h-8 text-lime-700" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2"><AnimatedCounter target={20} suffix="%" /> More</h3>
-                <p className="text-gray-700">Cash Sales</p>
+                <motion.h2 
+                  className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  Get A <motion.span 
+                    className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-lime-600"
+                    animate={{
+                      backgroundPosition: ["0%", "100%", "0%"]
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  >
+                    FREE ATM
+                  </motion.span> For Your Business!
+                </motion.h2>
+                <motion.p 
+                  className="text-xl text-gray-700 max-w-4xl mx-auto mb-8"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.4 }}
+                >
+                  An ATM is the easiest and quickest way to boost your business and improve your cash sales. Studies show that by giving your customers access to cash, you increase customer flow by <strong><AnimatedCounter target={5} suffix="%" /></strong> while also allowing an increase in cash sales by <strong><AnimatedCounter target={20} suffix="%" /></strong>.
+                </motion.p>
+                <motion.p 
+                  className="text-lg text-gray-700 max-w-3xl mx-auto"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.6 }}
+                >
+                  Allow us to help improve your business by allowing customers access to cash when they need it.
+                </motion.p>
               </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
+              {/* Benefits Cards */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                  whileHover={{ 
+                    scale: 1.05, 
+                    y: -10,
+                    boxShadow: "0 20px 40px rgba(0,0,0,0.1)"
+                  }}
+                  className="text-center p-8 bg-gradient-to-br from-green-50 to-lime-50 rounded-2xl border border-green-100 cursor-pointer group relative overflow-hidden"
+                >
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-br from-green-100 to-lime-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  />
+                  <motion.div 
+                    className="relative z-10 w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-green-200 transition-colors"
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <Users className="w-8 h-8 text-green-700" />
+                  </motion.div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2 relative z-10">
+                    <AnimatedCounter target={5} suffix="%" /> More
+                  </h3>
+                  <p className="text-gray-700 relative z-10">Customer Flow</p>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  whileHover={{ 
+                    scale: 1.05, 
+                    y: -10,
+                    boxShadow: "0 20px 40px rgba(0,0,0,0.1)"
+                  }}
+                  className="text-center p-8 bg-gradient-to-br from-lime-50 to-yellow-50 rounded-2xl border border-lime-100 cursor-pointer group relative overflow-hidden"
+                >
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-br from-lime-100 to-yellow-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  />
+                  <motion.div 
+                    className="relative z-10 w-16 h-16 bg-lime-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-lime-200 transition-colors"
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <TrendingUp className="w-8 h-8 text-lime-700" />
+                  </motion.div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2 relative z-10">
+                    <AnimatedCounter target={20} suffix="%" /> More
+                  </h3>
+                  <p className="text-gray-700 relative z-10">Cash Sales</p>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  whileHover={{ 
+                    scale: 1.05, 
+                    y: -10,
+                    boxShadow: "0 20px 40px rgba(0,0,0,0.1)"
+                  }}
+                  className="text-center p-8 bg-gradient-to-br from-yellow-50 to-green-50 rounded-2xl border border-yellow-100 cursor-pointer group relative overflow-hidden"
+                >
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-br from-yellow-100 to-green-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  />
+                  <motion.div 
+                    className="relative z-10 w-16 h-16 bg-yellow-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-yellow-200 transition-colors"
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <DollarSign className="w-8 h-8 text-yellow-700" />
+                  </motion.div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2 relative z-10">
+                    <AnimatedCounter target={0} startFrom={3000} prefix="$" /> Cost
+                  </h3>
+                  <p className="text-gray-700 relative z-10">FREE Placement</p>
+                </motion.div>
+              </div>
+
+              <motion.div 
+                className="text-center"
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="text-center p-6 bg-gradient-to-br from-yellow-50 to-green-50 rounded-2xl border border-yellow-100"
+                transition={{ delay: 0.8 }}
               >
-                <div className="w-16 h-16 bg-yellow-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <DollarSign className="w-8 h-8 text-yellow-700" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2"><AnimatedCounter target={0} startFrom={3000} prefix="$" /> Cost</h3>
-                <p className="text-gray-700">FREE Placement</p>
+                <motion.p 
+                  className="text-lg text-gray-700 mb-8 max-w-4xl mx-auto"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  Not sure if an ATM is right for your business? Have questions about how they work or what options are available? Or maybe you&apos;re ready to get started? Fill out the form below to find out if a FREE ATM placement is the right fit for you!
+                </motion.p>
+                
+                {/* Animated arrow pointing down */}
+                <motion.div
+                  className="flex justify-center"
+                  animate={{ y: [0, 10, 0] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <div className="w-8 h-8 border-2 border-green-500 rounded-full flex items-center justify-center">
+                    <motion.div
+                      className="w-3 h-3 border-r-2 border-b-2 border-green-500 transform rotate-45"
+                      animate={{ scale: [1, 1.2, 1] }}
+                      transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }}
+                    />
+                  </div>
+                </motion.div>
               </motion.div>
             </div>
-
-            <div className="text-center">
-              <p className="text-lg text-gray-700 mb-8">
-                Not sure if an ATM is right for your business? Have questions about how they work or what options are available? Or maybe you&apos;re ready to get started? Fill out the form below to find out if a FREE ATM placement is the right fit for you!
-              </p>
-            </div>
-          </div>
-        </div>
-      </motion.section>
-
-      {/* Contact Form Section */}
-      <motion.section 
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.35 }}
-        className="relative z-10 px-4 py-20"
-        id="contact-form"
-      >
-        <div className="max-w-4xl mx-auto">
-          <ContactForm />
+          </motion.div>
         </div>
       </motion.section>
 
@@ -226,92 +495,261 @@ export default function Home() {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.5 }}
-        className="relative z-10 px-4 py-20"
+        className="relative z-10 px-4 py-20 overflow-hidden"
       >
-        <div className="max-w-6xl mx-auto">
-          <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-green-100 shadow-sm">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                Who Owns ATMs And Where Do The Fees Go?
-              </h2>
-              <p className="text-xl text-gray-700">
-                For many of our clients, this is the first question—and arguably the most important one.
-              </p>
-            </div>
+        {/* Floating background elements */}
+        <motion.div
+          className="absolute top-10 left-20 w-32 h-32 bg-green-200 rounded-full opacity-10"
+          animate={{
+            y: [0, -40, 0],
+            x: [0, 30, 0],
+            rotate: [0, 360, 0]
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        <motion.div
+          className="absolute bottom-20 right-10 w-24 h-24 bg-lime-300 rounded-full opacity-15"
+          animate={{
+            y: [0, 35, 0],
+            x: [0, -25, 0],
+            rotate: [0, -360, 0]
+          }}
+          transition={{
+            duration: 16,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 5
+          }}
+        />
 
-            <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
-              <p>
-                Many people believe that big banks own all the ATMs in the world, taking our hard-earned money and lining their pockets with it. They think banks are charging us fees for taking our money out of &quot;our bank.&quot; While they&apos;re not entirely wrong, they&apos;re not entirely right either.
-              </p>
+        <div className="max-w-7xl mx-auto">
+          {/* Header Section */}
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <motion.div
+              className="inline-block px-6 py-2 bg-gradient-to-r from-green-100 to-lime-100 rounded-full mb-6"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+            >
+              <span className="text-green-800 font-semibold text-sm uppercase tracking-wide">Industry Insights</span>
+            </motion.div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              Who Owns ATMs And Where Do The{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-lime-600">
+                Fees Go?
+              </span>
+            </h2>
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+              For many of our clients, this is the first question—and arguably the most important one.
+            </p>
+          </motion.div>
 
-              <div className="bg-gradient-to-br from-green-50 to-lime-50 rounded-2xl p-8 my-8 border border-green-100">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-                  The Reality of ATM Ownership
-                </h3>
-                <p>
-                  Many companies, like Ford Frontier Investments, buy ATMs and act as a sort of middleman, connecting banks, credit card companies, businesses, and customers with the cash held on their plastic cards.
+          {/* Main Content Cards */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
+            {/* Left Column - Problem Statement */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="lg:col-span-7"
+            >
+              <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 md:p-10 border border-gray-200 shadow-lg h-full">
+                                 <div className="flex items-start space-x-4 mb-6">
+                   <div className="w-12 h-12 bg-red-100 rounded-2xl flex items-center justify-center flex-shrink-0">
+                     <CreditCard className="w-6 h-6 text-red-700" />
+                   </div>
+                   <div>
+                     <h3 className="text-2xl font-bold text-gray-900 mb-2">The Common Misconception</h3>
+                     <div className="w-16 h-1 bg-gradient-to-r from-red-500 to-orange-500 rounded-full"></div>
+                   </div>
+                 </div>
+                <p className="text-gray-700 text-lg leading-relaxed">
+                  Many people believe that big banks own all the ATMs in the world, taking our hard-earned money and lining their pockets with it. They think banks are charging us fees for taking our money out of "our bank."
                 </p>
-                <p className="mt-4">
-                  <strong>But here&apos;s the key:</strong> This money doesn&apos;t belong to the banks—it belongs to the owner of the ATM. In certain cases that&apos;s the banks, but not always.
-                </p>
-              </div>
-
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-                Understanding ATM Surcharges
-              </h3>
-              
-              <p>
-                That&apos;s where the fee comes into play. The &quot;Surcharge&quot; collected goes to the owner of the ATM, allowing them to pay for the machine while also gaining profit from the cash.
-              </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-8">
-                <div className="bg-gradient-to-br from-lime-50 to-yellow-50 rounded-xl p-6 border border-lime-100">
-                  <h4 className="text-lg font-semibold text-gray-900 mb-3">Surcharge fees cover:</h4>
-                  <ul className="space-y-2 text-gray-700">
-                    <li className="flex items-start space-x-2">
-                      <span className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
-                      <span>Machine repayment costs</span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <span className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
-                      <span>Repairs and maintenance (technology breaks)</span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <span className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
-                      <span>Credit card processing fees</span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <span className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
-                      <span>Return on cash investment</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="bg-gradient-to-br from-green-700 to-green-800 rounded-xl p-6 text-white">
-                  <h4 className="text-lg font-semibold mb-3">The Opportunity</h4>
-                  <p className="text-green-100 mb-4">
-                    With the right training, this can be done by anyone. And with the right experience, it can be done quite well.
+                <div className="mt-6 p-4 bg-gradient-to-r from-red-50 to-orange-50 rounded-xl border border-red-100">
+                  <p className="text-red-800 font-medium">
+                    While they're not entirely wrong, they're not entirely right either.
                   </p>
-                  <p className="text-green-100">
-                    That&apos;s where we come in—to help you succeed in the ATM business.
-                  </p>
                 </div>
               </div>
+            </motion.div>
 
-              <div className="text-center mt-12">
-                <p className="text-lg text-gray-700 mb-6">
-                  Ready to learn more about ATM ownership opportunities?
-                </p>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 bg-gradient-to-r from-green-600 to-green-700 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-                >
-                  Discover Your ATM Opportunity
-                </motion.button>
+            {/* Right Column - Reality */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="lg:col-span-5"
+            >
+              <div className="bg-gradient-to-br from-green-700 to-green-800 rounded-3xl p-8 md:p-10 text-white h-full">
+                                 <div className="flex items-start space-x-4 mb-6">
+                   <div className="w-12 h-12 bg-green-600 rounded-2xl flex items-center justify-center flex-shrink-0">
+                     <Users className="w-6 h-6 text-green-100" />
+                   </div>
+                   <div>
+                     <h3 className="text-2xl font-bold mb-2">The Reality</h3>
+                     <div className="w-16 h-1 bg-gradient-to-r from-green-400 to-lime-400 rounded-full"></div>
+                   </div>
+                 </div>
+                 <p className="text-green-100 text-lg leading-relaxed mb-6">
+                   Many local business owners, like those at Ford Frontier Investments, own their ATMs and act as a bridge, connecting banks, credit card companies, businesses, and customers with convenient cash access.
+                 </p>
+                 <div className="p-4 bg-green-600/30 rounded-xl border border-green-500/20">
+                   <p className="text-green-100 font-semibold">
+                     <strong>Key Insight:</strong> This money doesn't belong to the banks—it belongs to the owner of the ATM.
+                   </p>
+                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
+
+          {/* Surcharge Breakdown Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="mb-16"
+          >
+            <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-gray-200 shadow-lg">
+              <div className="text-center mb-12">
+                <div className="inline-block px-6 py-2 bg-gradient-to-r from-lime-100 to-yellow-100 rounded-full mb-6">
+                  <span className="text-lime-800 font-semibold text-sm uppercase tracking-wide">Revenue Breakdown</span>
+                </div>
+                <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                  Understanding ATM Surcharges
+                </h3>
+                <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+                  The "Surcharge" collected goes to the owner of the ATM, allowing them to pay for the machine while also gaining profit from the cash.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                                 {[
+                   {
+                     icon: Settings,
+                     title: 'Machine Costs',
+                     description: 'Repayment of initial ATM investment',
+                     bgColor: 'from-blue-50 to-cyan-50',
+                     borderColor: 'border-blue-200',
+                     iconBg: 'bg-blue-100',
+                     iconColor: 'text-blue-700'
+                   },
+                   {
+                     icon: Zap,
+                     title: 'Maintenance',
+                     description: 'Repairs and technical support',
+                     bgColor: 'from-green-50 to-emerald-50',
+                     borderColor: 'border-green-200',
+                     iconBg: 'bg-green-100',
+                     iconColor: 'text-green-700'
+                   },
+                   {
+                     icon: CreditCard,
+                     title: 'Processing',
+                     description: 'Credit card processing fees',
+                     bgColor: 'from-purple-50 to-pink-50',
+                     borderColor: 'border-purple-200',
+                     iconBg: 'bg-purple-100',
+                     iconColor: 'text-purple-700'
+                   },
+                   {
+                     icon: DollarSign,
+                     title: 'ROI',
+                     description: 'Return on cash investment',
+                     bgColor: 'from-yellow-50 to-orange-50',
+                     borderColor: 'border-yellow-200',
+                     iconBg: 'bg-yellow-100',
+                     iconColor: 'text-yellow-700'
+                   }
+                 ].map((item, index) => (
+                   <motion.div
+                     key={index}
+                     initial={{ opacity: 0, y: 20 }}
+                     animate={{ opacity: 1, y: 0 }}
+                     transition={{ duration: 0.6, delay: 0.9 + index * 0.1 }}
+                     whileHover={{ 
+                       scale: 1.05, 
+                       y: -10,
+                       boxShadow: "0 20px 40px rgba(0,0,0,0.1)"
+                     }}
+                     className={`bg-gradient-to-br ${item.bgColor} rounded-2xl p-6 border ${item.borderColor} cursor-pointer group relative overflow-hidden`}
+                   >
+                     <motion.div
+                       className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                     />
+                     <div className={`w-12 h-12 ${item.iconBg} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                       <item.icon className={`w-6 h-6 ${item.iconColor}`} />
+                     </div>
+                     <h4 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h4>
+                     <p className="text-gray-700 text-sm">{item.description}</p>
+                   </motion.div>
+                 ))}
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Opportunity Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
+            className="relative"
+          >
+            <div className="bg-gradient-to-r from-green-600 via-green-700 to-green-800 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden">
+              {/* Background pattern */}
+              <div className="absolute inset-0 opacity-10">
+                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-lime-400 to-green-600"></div>
+                <div className="absolute top-10 right-10 w-32 h-32 bg-lime-300 rounded-full opacity-20"></div>
+                <div className="absolute bottom-10 left-20 w-24 h-24 bg-yellow-300 rounded-full opacity-15"></div>
+              </div>
+
+              <div className="relative z-10 text-center">
+                <div className="inline-block px-6 py-2 bg-green-500/30 rounded-full mb-6">
+                  <span className="text-green-100 font-semibold text-sm uppercase tracking-wide">Your Opportunity</span>
+                </div>
+                <h3 className="text-3xl md:text-4xl font-bold mb-6">
+                  Ready to Enter the ATM Business?
+                </h3>
+                <p className="text-xl text-green-100 mb-4 max-w-3xl mx-auto">
+                  With the right training, this can be done by anyone. And with the right experience, it can be done quite well.
+                </p>
+                <p className="text-lg text-green-200 mb-8 max-w-2xl mx-auto">
+                  That's where we come in—to help you succeed in the ATM business.
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="px-8 py-4 bg-white text-green-800 font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center space-x-2"
+                  >
+                    <span>Discover Your ATM Opportunity</span>
+                    <motion.span
+                      animate={{ x: [0, 5, 0] }}
+                      transition={{ duration: 1.5, repeat: Infinity }}
+                    >
+                      →
+                    </motion.span>
+                  </motion.button>
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="px-8 py-4 border-2 border-green-300 text-green-100 font-semibold rounded-full hover:bg-green-500/20 transition-all duration-300"
+                  >
+                    Schedule Consultation
+                  </motion.button>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </motion.section>
 
@@ -320,122 +758,359 @@ export default function Home() {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.55 }}
-        className="relative z-10 px-4 py-20"
+        className="relative z-10 px-4 py-20 overflow-hidden"
       >
-        <div className="max-w-6xl mx-auto">
-          <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-green-100 shadow-sm">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                Should I Buy An ATM?
-              </h2>
-              <p className="text-xl text-gray-700 max-w-4xl mx-auto">
-                Before answering this question, you must ask yourself if either you or your customers will benefit from ATM installation. If the answer is no, you probably don&apos;t need one.
-              </p>
+        {/* Floating background elements */}
+                 <motion.div
+           className="absolute top-20 right-20 w-28 h-28 bg-lime-200 rounded-full opacity-10"
+           animate={{
+             y: [0, -35, 0],
+             x: [0, 25, 0],
+             rotate: [0, 270, 0]
+           }}
+           transition={{
+             duration: 18,
+             repeat: Infinity,
+             ease: "easeInOut"
+           }}
+         />
+         <motion.div
+           className="absolute bottom-32 left-16 w-20 h-20 bg-yellow-300 rounded-full opacity-15"
+           animate={{
+             y: [0, 30, 0],
+             x: [0, -20, 0],
+             rotate: [0, -270, 0]
+           }}
+           transition={{
+             duration: 14,
+             repeat: Infinity,
+             ease: "easeInOut",
+             delay: 4
+           }}
+         />
+
+        <div className="max-w-7xl mx-auto">
+          {/* Header Section */}
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+                         <motion.div
+               className="inline-block px-6 py-2 bg-gradient-to-r from-green-100 to-lime-100 rounded-full mb-6"
+               whileHover={{ scale: 1.05 }}
+               transition={{ duration: 0.3 }}
+             >
+               <span className="text-green-800 font-semibold text-sm uppercase tracking-wide">Decision Guide</span>
+             </motion.div>
+             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+               Should I Buy An{' '}
+               <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-lime-600">
+                 ATM?
+               </span>
+             </h2>
+            <p className="text-xl text-gray-700 max-w-4xl mx-auto">
+              Before answering this question, you must ask yourself if either you or your customers will benefit from ATM installation.
+            </p>
+          </motion.div>
+
+          {/* Decision Framework */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="mb-16"
+          >
+            <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-gray-200 shadow-lg">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  className="bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl p-8 border border-red-100 relative overflow-hidden"
+                >
+                  <div className="absolute top-4 right-4 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
+                    <span className="text-red-600 font-bold">✗</span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">If the answer is NO</h3>
+                  <p className="text-gray-700 text-lg">
+                    You probably don't need an ATM. Focus on other business improvements that will directly benefit your customers.
+                  </p>
+                </motion.div>
+
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  className="bg-gradient-to-br from-green-50 to-blue-50 rounded-2xl p-8 border border-green-100 relative overflow-hidden"
+                >
+                  <div className="absolute top-4 right-4 w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                    <span className="text-green-600 font-bold">✓</span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">If the answer is YES</h3>
+                  <p className="text-gray-700 text-lg">
+                    Great! Now it's time to explore your options and make an informed decision about the best approach for your business.
+                  </p>
+                </motion.div>
+              </div>
             </div>
+          </motion.div>
 
-            <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
-              <p>
-                If your answer is yes, there are other factors to consider.
-              </p>
-
-              <div className="bg-gradient-to-br from-yellow-50 to-green-50 rounded-2xl p-8 my-8 border border-yellow-100">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-yellow-100 rounded-2xl flex items-center justify-center flex-shrink-0">
-                    <Car className="w-6 h-6 text-yellow-700" />
+          {/* Car Analogy Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="mb-16"
+          >
+                         <div className="bg-gradient-to-r from-yellow-50 via-lime-50 to-green-50 rounded-3xl p-8 md:p-12 border border-yellow-200 relative overflow-hidden">
+               <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-yellow-200 to-lime-200 rounded-full opacity-20 transform translate-x-32 -translate-y-32"></div>
+              
+              <div className="relative z-10">
+                <div className="flex items-start space-x-6 mb-8">
+                  <div className="w-16 h-16 bg-yellow-100 rounded-2xl flex items-center justify-center flex-shrink-0">
+                    <Car className="w-8 h-8 text-yellow-700" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+                    <h3 className="text-3xl font-bold text-gray-900 mb-4">
                       Think of it like buying a car
                     </h3>
-                    <p>
-                      You don&apos;t just wake up one day, flip a coin, and write a check without knowing who you&apos;re buying from, what you&apos;re getting, or how much it costs.
-                    </p>
-                    <p className="mt-4">
-                      Before making such a large purchase, you think about it—researching car brands, dealerships, styles, pricing, and comparing the different models available. Only after you&apos;ve chosen what is best for you, do you go make the purchase.
-                    </p>
-                    <p className="mt-4 font-semibold text-gray-800">
-                      The same logic applies to buying an ATM, and once you have decided an ATM will benefit your business, it&apos;s time to look at your options.
+                    <p className="text-xl text-gray-700 leading-relaxed">
+                      You don't just wake up one day, flip a coin, and write a check without knowing who you're buying from, what you're getting, or how much it costs.
                     </p>
                   </div>
                 </div>
-              </div>
 
-              <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-                ATM Placement Options For Business Owners
-              </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="space-y-4">
+                    <h4 className="text-xl font-semibold text-gray-900">The Car Buying Process:</h4>
+                    <div className="space-y-3">
+                      {[
+                        'Research car brands & models',
+                        'Compare dealerships & pricing',
+                        'Test drive different options',
+                        'Choose what fits your needs',
+                        'Make the purchase'
+                      ].map((step, index) => (
+                        <motion.div
+                          key={index}
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
+                          className="flex items-center space-x-3"
+                        >
+                          <div className="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center">
+                            <span className="text-yellow-700 font-bold text-sm">{index + 1}</span>
+                          </div>
+                          <span className="text-gray-700">{step}</span>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
 
-              <div className="mb-8">
-                <h4 className="text-xl font-semibold text-gray-900 mb-4">
-                  When buying a car, you have many options:
-                </h4>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                  <div className="bg-gradient-to-br from-green-50 to-lime-50 rounded-xl p-6 border border-green-100">
-                    <h5 className="text-lg font-semibold text-gray-900 mb-2">Pay Cash</h5>
-                    <p className="text-sm text-gray-700">Spend more upfront, but own the car and avoid interest. A larger investment, but no payments.</p>
-                  </div>
-                  <div className="bg-gradient-to-br from-lime-50 to-yellow-50 rounded-xl p-6 border border-lime-100">
-                    <h5 className="text-lg font-semibold text-gray-900 mb-2">Financing</h5>
-                    <p className="text-sm text-gray-700">Use someone else&apos;s money to purchase, paying back over time with interest.</p>
-                  </div>
-                  <div className="bg-gradient-to-br from-yellow-50 to-green-50 rounded-xl p-6 border border-yellow-100">
-                    <h5 className="text-lg font-semibold text-gray-900 mb-2">Leasing</h5>
-                    <p className="text-sm text-gray-700">Lower monthly payments for a period. Fewer ownership rights, but fewer responsibilities.</p>
+                  <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-white/40">
+                    <h4 className="text-xl font-semibold text-gray-900 mb-4">The Same Logic Applies to ATMs</h4>
+                    <p className="text-gray-700 mb-4">
+                      Once you've decided an ATM will benefit your business, it's time to look at your options and make an informed choice.
+                    </p>
+                    <div className="flex items-center space-x-2 text-green-700">
+                      <CheckCircle className="w-5 h-5" />
+                      <span className="font-medium">Smart decision-making process</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-
-              <h4 className="text-xl font-semibold text-gray-900 mb-6">
-                When choosing to get an ATM, you have similar options:
-              </h4>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.1 }}
-                  className="bg-white rounded-2xl p-8 border border-green-200 shadow-sm hover:shadow-md transition-all duration-300"
-                >
-                  <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <Settings className="w-8 h-8 text-green-700" />
-                  </div>
-                  <h5 className="text-xl font-bold text-gray-900 mb-4 text-center">Own the ATM</h5>
-                  <p className="text-gray-700 text-center">
-                    Buy the ATM yourself. You&apos;ll have full ownership but also responsibility for maintenance, restocking, compliance, and liabilities.
-                  </p>
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                  className="bg-white rounded-2xl p-8 border border-lime-200 shadow-sm hover:shadow-md transition-all duration-300"
-                >
-                  <div className="w-16 h-16 bg-lime-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <Handshake className="w-8 h-8 text-lime-700" />
-                  </div>
-                  <h5 className="text-xl font-bold text-gray-900 mb-4 text-center">ATM Partnership</h5>
-                  <p className="text-gray-700 text-center">
-                    Someone else buys the machine, handling maintenance, repairs, installation, and compliance. You simply stock with cash and get paid.
-                  </p>
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.3 }}
-                  className="bg-white rounded-2xl p-8 border border-yellow-200 shadow-sm hover:shadow-md transition-all duration-300"
-                >
-                  <div className="w-16 h-16 bg-yellow-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <CheckCircle className="w-8 h-8 text-yellow-700" />
-                  </div>
-                  <h5 className="text-xl font-bold text-gray-900 mb-4 text-center">Hands-Free Placement</h5>
-                  <p className="text-gray-700 text-center">
-                    Completely hands-free, ideal for high-volume locations. We install, maintain, fill, and operate the ATM. No hassle for you.
-                  </p>
-                </motion.div>
               </div>
             </div>
-          </div>
+          </motion.div>
+
+          {/* Options Comparison */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="mb-16"
+          >
+            <div className="text-center mb-12">
+              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Your ATM Options
+              </h3>
+              <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+                Just like car purchasing, you have multiple ways to get an ATM for your business
+              </p>
+            </div>
+
+            {/* Car Options */}
+            <div className="mb-12">
+              <h4 className="text-2xl font-semibold text-gray-900 mb-6 text-center">Car Purchase Options</h4>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                 {[
+                   {
+                     icon: DollarSign,
+                     title: 'Pay Cash',
+                     description: 'Spend more upfront, but own the car and avoid interest',
+                     benefit: 'Full ownership, no payments',
+                     bgColor: 'from-green-50 to-lime-50',
+                     borderColor: 'border-green-200',
+                     iconBg: 'bg-green-100',
+                     iconColor: 'text-green-700'
+                   },
+                   {
+                     icon: CreditCard,
+                     title: 'Financing',
+                     description: 'Use someone else\'s money to purchase, paying back over time',
+                     benefit: 'Lower upfront cost, monthly payments',
+                     bgColor: 'from-lime-50 to-yellow-50',
+                     borderColor: 'border-lime-200',
+                     iconBg: 'bg-lime-100',
+                     iconColor: 'text-lime-700'
+                   },
+                   {
+                     icon: Clock,
+                     title: 'Leasing',
+                     description: 'Lower monthly payments for a period',
+                     benefit: 'Fewer responsibilities, less ownership',
+                     bgColor: 'from-yellow-50 to-green-50',
+                     borderColor: 'border-yellow-200',
+                     iconBg: 'bg-yellow-100',
+                     iconColor: 'text-yellow-700'
+                   }
+                 ].map((option, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.9 + index * 0.1 }}
+                    whileHover={{ scale: 1.05, y: -10 }}
+                    className={`bg-gradient-to-br ${option.bgColor} rounded-2xl p-6 border ${option.borderColor} cursor-pointer relative overflow-hidden`}
+                  >
+                    <div className={`w-12 h-12 ${option.iconBg} rounded-xl flex items-center justify-center mb-4`}>
+                      <option.icon className={`w-6 h-6 ${option.iconColor}`} />
+                    </div>
+                    <h5 className="text-lg font-bold text-gray-900 mb-2">{option.title}</h5>
+                    <p className="text-gray-700 text-sm mb-3">{option.description}</p>
+                    <div className="text-xs text-gray-600 bg-white/60 rounded-lg p-2">
+                      {option.benefit}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* ATM Options */}
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-blue-50 rounded-3xl opacity-30"></div>
+              <div className="relative z-10 p-8 md:p-12">
+                <h4 className="text-2xl font-semibold text-gray-900 mb-8 text-center">ATM Placement Options</h4>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                                     {[
+                     {
+                       icon: Settings,
+                       title: 'Own the ATM',
+                       description: 'Buy the ATM yourself. You\'ll have full ownership but also responsibility for maintenance, restocking, compliance, and liabilities. We handle the processing for free.',
+                       pros: ['Full control', 'Higher profits', 'Asset ownership', 'Free processing'],
+                       cons: ['Higher upfront cost', 'Maintenance responsibility', 'Compliance burden'],
+                       bgColor: 'from-green-600 to-green-700',
+                       recommended: false
+                     },
+                     {
+                       icon: Handshake,
+                       title: 'ATM Partnership',
+                       description: 'We buy the machine, handling maintenance, repairs, installation, and compliance. You simply stock with cash and get paid.',
+                       pros: ['Lower upfront cost', 'Shared responsibilities', 'Still earn revenue'],
+                       cons: ['Shared profits', 'Less control', 'Partner dependency'],
+                       bgColor: 'from-lime-600 to-green-600',
+                       recommended: true
+                     },
+                     {
+                       icon: CheckCircle,
+                       title: 'Hands-Free Placement',
+                       description: 'Completely hands-free, ideal for high-volume locations. We install, maintain, fill, and operate the ATM. No hassle for you.',
+                       pros: ['Zero responsibility', 'No upfront cost', 'Professional management'],
+                       cons: ['Lower revenue share', 'No control', 'Location dependent'],
+                       bgColor: 'from-yellow-600 to-lime-600',
+                       recommended: false
+                     }
+                   ].map((option, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 30 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 1.2 + index * 0.2 }}
+                      whileHover={{ scale: 1.02, y: -5 }}
+                      className={`bg-gradient-to-br ${option.bgColor} rounded-2xl p-8 text-white relative overflow-hidden shadow-lg`}
+                    >
+                      {option.recommended && (
+                        <div className="absolute top-4 right-4 bg-yellow-400 text-yellow-900 px-3 py-1 rounded-full text-xs font-bold">
+                          RECOMMENDED
+                        </div>
+                      )}
+                      
+                      <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <option.icon className="w-8 h-8 text-white" />
+                      </div>
+                      
+                      <h5 className="text-xl font-bold mb-4 text-center">{option.title}</h5>
+                      <p className="text-white/90 text-sm mb-6 text-center">{option.description}</p>
+                      
+                      <div className="space-y-4">
+                        <div>
+                          <h6 className="font-semibold text-sm mb-2">Pros:</h6>
+                          <ul className="space-y-1">
+                            {option.pros.map((pro, i) => (
+                              <li key={i} className="text-xs text-white/80 flex items-center space-x-2">
+                                <CheckCircle className="w-3 h-3" />
+                                <span>{pro}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                        
+                        <div>
+                          <h6 className="font-semibold text-sm mb-2">Considerations:</h6>
+                          <ul className="space-y-1">
+                            {option.cons.map((con, i) => (
+                              <li key={i} className="text-xs text-white/80 flex items-center space-x-2">
+                                <span className="w-3 h-3 border border-white/40 rounded-full flex-shrink-0"></span>
+                                <span>{con}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* CTA Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.8 }}
+            className="text-center"
+          >
+                         <div className="bg-gradient-to-r from-green-600 to-lime-600 rounded-3xl p-8 md:p-12 text-white">
+              <h3 className="text-3xl font-bold mb-4">Ready to Make Your Decision?</h3>
+              <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+                Let's discuss which option is best for your specific business needs and location.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-8 py-4 bg-white text-green-700 font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                >
+                  Get Personalized Recommendation
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-8 py-4 border-2 border-white text-white font-semibold rounded-full hover:bg-white/10 transition-all duration-300"
+                >
+                  Compare All Options
+                </motion.button>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </motion.section>
 
@@ -576,39 +1251,28 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* CTA Section */}
+      {/* Final CTA Section */}
       <motion.section 
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.6 }}
-        className="relative z-10 px-4 py-20"
-        id="contact"
+        className="relative z-10 px-4 py-16"
       >
         <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-green-100 shadow-sm">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+          <div className="bg-gradient-to-r from-green-600 to-green-700 rounded-3xl p-8 md:p-12 text-white">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Ready to Boost Your Business?
             </h2>
-            <p className="text-xl text-gray-700 mb-8">
-              Join hundreds of satisfied business owners who&apos;ve increased their revenue with our ATM solutions.
+            <p className="text-xl mb-8 opacity-90">
+              Join tons of satisfied business owners who&apos;ve increased their revenue with our ATM solutions.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <div className="flex items-center space-x-2 text-gray-700">
-                <Phone className="w-5 h-5" />
-                <span>(555) 123-4567</span>
-              </div>
-              <div className="flex items-center space-x-2 text-gray-700">
-                <Mail className="w-5 h-5" />
-                <span>info@fordfrontier.com</span>
-              </div>
-            </div>
             <motion.a
-              href="/contact"
+              href="#contact-form"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="mt-8 px-10 py-4 bg-gradient-to-r from-green-600 to-green-700 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-center inline-block"
+              className="px-10 py-4 bg-white text-green-700 font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-center inline-block"
             >
-              Schedule Free Consultation
+              Get Started Today
             </motion.a>
           </div>
         </div>
@@ -618,7 +1282,6 @@ export default function Home() {
       <footer className="relative z-10 px-4 py-8 border-t border-green-200">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-gray-600">
-            © 2024 Ford Frontier Investments. All rights reserved. | Licensed & Insured ATM Provider
           </p>
         </div>
       </footer>
